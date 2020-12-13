@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://source/UI/ExitButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/UI/PlayButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/UI/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=4]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=5]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -246.0
+margin_right = 300.0
+margin_bottom = -166.0
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -128.5
+margin_right = 140.0
+margin_bottom = 128.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 2 )]
+margin_right = 280.0
+margin_bottom = 83.0
+next_path = "res://source/challenges/Challenge01.tscn"
+
+[node name="GuideButton" parent="Menu" instance=ExtResource( 2 )]
+margin_top = 87.0
+margin_right = 280.0
+margin_bottom = 170.0
+text = "Guide"
+next_path = "res://source/screens/Guide.tscn"
+
+[node name="ExitButton" parent="Menu" instance=ExtResource( 1 )]
+margin_top = 174.0
+margin_right = 280.0
+margin_bottom = 257.0

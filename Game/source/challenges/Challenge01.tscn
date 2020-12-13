@@ -1,0 +1,583 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://source/actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/actors/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=4]
+[ext_resource path="res://source/objects/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/objects/Portal2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/challenges/Challenge02.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/UI/Interface.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "bouncing"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.267944, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Challenge01" type="Node2D"]
+
+[node name="Interface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Interface" parent="Interface" instance=ExtResource( 8 )]
+
+[node name="Portal2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3102.36, 1115.96 )
+next_scene = ExtResource( 7 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 587.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 2147483656
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -524288, 0, 0, -524287, 0, 0, -524248, 0, 0, -524247, 0, 0, -524246, 0, 0, -524245, 0, 0, -524244, 0, 0, -524243, 0, 0, -524242, 0, 0, -524241, 0, 0, -524240, 0, 0, -524239, 0, 0, -458752, 0, 0, -458751, 0, 0, -458712, 0, 0, -458711, 0, 0, -458710, 0, 0, -458709, 0, 0, -458708, 0, 0, -458707, 0, 0, -458706, 0, 0, -458705, 0, 0, -458704, 0, 0, -458703, 0, 0, -393216, 0, 0, -393215, 0, 0, -393176, 0, 0, -393175, 0, 0, -393174, 0, 0, -393173, 0, 0, -393172, 0, 0, -393171, 0, 0, -393170, 0, 0, -393169, 0, 0, -393168, 0, 0, -393167, 0, 0, -327680, 0, 0, -327679, 0, 0, -327640, 0, 0, -327639, 0, 0, -327638, 0, 0, -327637, 0, 0, -327636, 0, 0, -327635, 0, 0, -327634, 0, 0, -327633, 0, 0, -327632, 0, 0, -327631, 0, 0, -262144, 0, 0, -262143, 0, 0, -262104, 0, 0, -262103, 0, 0, -262102, 0, 0, -262101, 0, 0, -262100, 0, 0, -262099, 0, 0, -262098, 0, 0, -262097, 0, 0, -262096, 0, 0, -262095, 0, 0, -196608, 0, 0, -196607, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196565, 0, 0, -196564, 0, 0, -196563, 0, 0, -196562, 0, 0, -196561, 0, 0, -196560, 0, 0, -196559, 0, 0, -131072, 0, 0, -131071, 0, 0, -131032, 0, 0, -131031, 0, 0, -131030, 0, 0, -131029, 0, 0, -131028, 0, 0, -131027, 0, 0, -131026, 0, 0, -131025, 0, 0, -131024, 0, 0, -131023, 0, 0, -65536, 0, 0, -65535, 0, 0, -65496, 0, 0, -65495, 0, 0, -65494, 0, 0, -65493, 0, 0, -65492, 0, 0, -65491, 0, 0, -65490, 0, 0, -65489, 0, 0, -65488, 0, 0, -65487, 0, 0, 0, 0, 0, 1, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 65536, 0, 0, 65537, 0, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 65580, 0, 0, 65581, 0, 0, 65582, 0, 0, 65583, 0, 0, 65584, 0, 0, 65585, 0, 0, 131072, 0, 0, 131073, 0, 0, 131112, 0, 0, 131113, 0, 0, 131114, 0, 0, 131115, 0, 0, 131116, 0, 0, 131117, 0, 0, 131118, 0, 0, 131119, 0, 0, 131120, 0, 0, 131121, 0, 0, 196608, 0, 0, 196609, 0, 0, 196648, 0, 0, 196649, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 196653, 0, 0, 196654, 0, 0, 196655, 0, 0, 196656, 0, 0, 196657, 0, 0, 262144, 0, 0, 262145, 0, 0, 262184, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0, 262188, 0, 0, 262189, 0, 0, 262190, 0, 0, 262191, 0, 0, 262192, 0, 0, 262193, 0, 0, 327680, 0, 0, 327681, 0, 0, 327720, 0, 0, 327721, 0, 0, 327722, 0, 0, 327723, 0, 0, 327724, 0, 0, 327725, 0, 0, 327726, 0, 0, 327727, 0, 0, 327728, 0, 0, 327729, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393258, 0, 0, 393259, 0, 0, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 393265, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 458801, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 524322, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 524327, 0, 0, 524328, 0, 0, 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 524335, 0, 0, 524336, 0, 0, 524337, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 589871, 0, 0, 589872, 0, 0, 589873, 0, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 896.0
+margin_bottom = 480.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 368, 529 )
+stomp_impulse = 600.0
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2( 240, -194.5 )
+limit_right = 4000
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1570.13, 243.817 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2267.13, 165.817 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1163.13, 165.817 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2731.13, 242.817 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1358.47, 384.928 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2055.47, 306.928 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 951.468, 306.928 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2519.47, 383.928 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 925, 688.5 )
+
+[node name="coin" parent="Coin" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1041, 688.5 )
+
+[node name="coin" parent="Coin2" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin2" index="2"]
+anims/bouncing = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="Coin3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1155, 687.5 )
+
+[node name="coin" parent="Coin3" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin3" index="2"]
+anims/bouncing = SubResource( 3 )
+anims/fade_out = SubResource( 4 )
+
+[node name="Coin4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1536, 850.5 )
+
+[node name="coin" parent="Coin4" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin4" index="2"]
+anims/bouncing = SubResource( 5 )
+anims/fade_out = SubResource( 6 )
+
+[node name="Coin5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1650, 849.5 )
+
+[node name="coin" parent="Coin5" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin5" index="2"]
+anims/bouncing = SubResource( 7 )
+anims/fade_out = SubResource( 8 )
+
+[node name="Coin6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2368, 777.5 )
+
+[node name="coin" parent="Coin6" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin6" index="2"]
+anims/bouncing = SubResource( 9 )
+anims/fade_out = SubResource( 10 )
+
+[node name="Coin7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2720, 850.5 )
+
+[node name="coin" parent="Coin7" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin7" index="2"]
+anims/bouncing = SubResource( 11 )
+anims/fade_out = SubResource( 12 )
+
+[node name="Coin8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2834, 849.5 )
+
+[node name="coin" parent="Coin8" index="0"]
+position = Vector2( 0, -10 )
+
+[node name="AnimationPlayer" parent="Coin8" index="2"]
+anims/bouncing = SubResource( 13 )
+anims/fade_out = SubResource( 14 )
+
+[editable path="Player"]
+
+[editable path="Coin"]
+
+[editable path="Coin2"]
+
+[editable path="Coin3"]
+
+[editable path="Coin4"]
+
+[editable path="Coin5"]
+
+[editable path="Coin6"]
+
+[editable path="Coin7"]
+
+[editable path="Coin8"]
